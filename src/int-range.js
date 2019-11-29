@@ -1,7 +1,7 @@
 const incrementBy = (steps) => (value) => value + steps; 
 const decrementBy = (steps) => (value) => value - steps;  
 
-const incrementUoTo = (limit) => (value) => value <= limit;
+const incrementUpTo = (limit) => (value) => value <= limit;
 const decrementUpTo = (limit) =>  (value) => value >= limit;
 
 const getUpdateStrategy = (start, limit, steps) => {
@@ -10,7 +10,7 @@ const getUpdateStrategy = (start, limit, steps) => {
 
 
   strategy.next = isIncrement === true ? incrementBy(steps) : decrementBy(steps);
-  strategy.hasNext = isIncrement === true ? incrementUoTo(limit) : decrementUpTo(limit);
+  strategy.hasNext = isIncrement === true ? incrementUpTo(limit) : decrementUpTo(limit);
 
   if(typeof steps === 'function') {
     // strategy.next = 
