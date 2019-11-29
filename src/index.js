@@ -1,5 +1,6 @@
 
-import {intRange, multiples} from './int-range.js';
+import {intRange} from './int-range.js';
+import { leapYear } from './leap-year.js';
 
 const displayRange = (ints) => {
     const list = document.querySelector('#list');
@@ -14,9 +15,9 @@ const displayRange = (ints) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const range = intRange({
-        start: 1,
-        limit: 50,
-        sequence: multiples({of: 5, steps: 3})
+        start: 1980,
+        limit: 2020,
+        sequence: leapYear({steps: 2})
     });
 
     displayRange(range);
