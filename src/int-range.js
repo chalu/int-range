@@ -16,28 +16,6 @@ const getUpdateStrategy = (start, limit, steps) => {
 
 };
 
-
-export const even = (gait = 1) => (updateValueByOne) => {
-
-  const isEven = (int) => int % 2 === 0;
-
-  return (value) => {
-
-    const matches = 0;
-    let nextValue = value;
-    
-    while( matches < gait ) {
-       nextValue = updateValueByOne(nextValue);
-
-      if(isEven(nextValue)) matches += 1;
-    }
-
-    return nextValue;
-
-  };
-
-};
-
 export const intRange = ( options = {} ) => {
   const {start = 0, limit = 20, steps = 1} = options;
 
