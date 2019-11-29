@@ -5,15 +5,15 @@ const updateByOne = (isIncrement) => isIncrement ? incrementBy(1) : decrementBy(
 const incrementUpTo = (limit) => (value) => value <= limit;
 const decrementUpTo = (limit) =>  (value) => value >= limit;
 
-const getUpdateStrategy = (start, limit, steps) => {
+const getUpdateStrategy = (start, limit, sequence) => {
   const strategy = {};
   const isIncrement = start < limit;
 
-  strategy.next = isIncrement === true ? incrementBy(steps) : decrementBy(steps);
+  strategy.next = isIncrement === true ? incrementBy(sequence) : decrementBy(sequence);
   strategy.hasNext = isIncrement === true ? incrementUpTo(limit) : decrementUpTo(limit);
 
-  if(typeof steps === 'function') {
-    strategy.next = steps( updateByOne(isIncrement) );
+  if(typeof sequence === 'function') {
+    strategy.next = sequence( updateByOne(isIncrement) );
   }
 
   return strategy;
@@ -61,10 +61,10 @@ export const odd = (opts = {}) => (updateValueByOne) => {
 };
 
 export const intRange = ( options = {} ) => {
-  const {start = 0, limit = 20, steps = 1} = options;
+  const {start = 0, limit = 20, sequence = 1} = options;
 
   const range = [];
-  const {next, hasNext} = getUpdateStrategy(start, limit, steps);
+  const {next, hasNext} = getUpdateStrategy(start, limit, sequence);
 
   let value = start;
   while( hasNext(value) ) {

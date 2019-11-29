@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const range = intRange({
         start: 1,
         limit: 20,
-        steps: odd(2)
+        sequence: odd(2)
     });
 
     displayRange(range);
