@@ -1,5 +1,5 @@
 
-import {intRange, even} from './int-range.js';
+import {intRange, odd} from './int-range.js';
 
 const displayRange = (ints) => {
     const list = document.querySelector('#list');
@@ -14,9 +14,9 @@ const displayRange = (ints) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const range = intRange({
-        start: 2,
+        start: 1,
         limit: 20,
-        steps: even(2)
+        steps: odd(2)
     });
 
     displayRange(range);

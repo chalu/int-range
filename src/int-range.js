@@ -40,11 +40,30 @@ export const even = (opts = {}) => (updateValueByOne) => {
 
 };
 
+export const odd = (opts = {}) => (updateValueByOne) => {
+
+  const {steps = 1} = opts;
+  const isOdd = (num) => num % 2 !== 0;
+
+  return function getOdd (value) {
+
+    let matches = 0;
+    let nextValue = value;
+
+    while(matches < steps) {
+      nextValue = updateValueByOne(nextValue);
+      if( isOdd(nextValue) ) matches += 1;
+    }
+
+    return nextValue;
+  }
+
+};
+
 export const intRange = ( options = {} ) => {
   const {start = 0, limit = 20, steps = 1} = options;
 
   const range = [];
-
   const {next, hasNext} = getUpdateStrategy(start, limit, steps);
 
   let value = start;
