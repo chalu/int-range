@@ -1,5 +1,5 @@
 
-import {intRange, odd} from './int-range.js';
+import {intRange, multiples} from './int-range.js';
 
 const displayRange = (ints) => {
     const list = document.querySelector('#list');
@@ -15,8 +15,8 @@ const displayRange = (ints) => {
 document.addEventListener('DOMContentLoaded', () => {
     const range = intRange({
         start: 1,
-        limit: 20,
-        sequence: odd(2)
+        limit: 50,
+        sequence: multiples({of: 5, steps: 3})
     });
 
     displayRange(range);

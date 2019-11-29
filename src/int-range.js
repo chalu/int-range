@@ -60,6 +60,26 @@ export const odd = (opts = {}) => (updateValueByOne) => {
 
 };
 
+export const multiples = (opts = {}) => (updateValueByOne) => {
+
+  const {of = 2, steps = 1} = opts;
+  const isMultiple = (num) => num % of === 0;
+
+  return function getMultiple (value) {
+
+    let matches = 0;
+    let nextValue = value;
+
+    while(matches < steps) {
+      nextValue = updateValueByOne(nextValue);
+      if( isMultiple(nextValue) ) matches += 1;
+    }
+
+    return nextValue;
+  }
+
+};
+
 export const intRange = ( options = {} ) => {
   const {start = 0, limit = 20, sequence = 1} = options;
 
