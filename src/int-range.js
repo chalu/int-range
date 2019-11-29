@@ -12,6 +12,10 @@ const getUpdateStrategy = (start, limit, steps) => {
   strategy.next = isIncrement === true ? incrementBy(steps) : decrementBy(steps);
   strategy.hasNext = isIncrement === true ? incrementUoTo(limit) : decrementUpTo(limit);
 
+  if(typeof steps === 'function') {
+    // strategy.next = 
+  }
+
   return strategy;
 
 };
