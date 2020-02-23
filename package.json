@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:chalu/int-range.git",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
 }
