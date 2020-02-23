@@ -1,6 +1,6 @@
 export const leapYear = (opts = {}) => (updateValueByOne) => {
 
-    const { of = 2, steps = 1 } = opts;
+    const { steps = 1 } = opts;
     const isLeapYear = (year) => {
         if (year % 4 === 0) return true;
 
