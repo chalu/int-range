@@ -3,5 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:chalu/int-range.git",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "lint": "npx eslint ./src",
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
+  }
 }
