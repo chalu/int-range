@@ -1,23 +1,31 @@
-export const leapYear = (opts = {}) => (updateValueByOne) => {
-
+export const leapYear = (opts = {}) => {
     const { steps = 1 } = opts;
-    const isLeapYear = (year) => {
-        if (year % 4 === 0) return true;
 
-        if ((year % 100 === 0) && (year % 400 === 0)) return true;
-    };
+    const leapYrSequence = (updateValueByOne) => {
 
-    return function getLeapYear(value) {
+        const isLeapYear = (year) => {
+            if (year % 4 === 0) return true;
+    
+            if ((year % 100 === 0) && (year % 400 === 0)) return true;
 
-        let matches = 0;
-        let nextValue = value;
-
-        while (matches < steps) {
-            nextValue = updateValueByOne(nextValue);
-            if (isLeapYear(nextValue)) matches += 1;
+            return false;
+        };
+    
+        const getLeapYear = (value) => {
+    
+            let matches = 0;
+            let nextValue = value;
+    
+            while (matches < steps) {
+                nextValue = updateValueByOne(nextValue);
+                if (isLeapYear(nextValue)) matches += 1;
+            }
+    
+            return nextValue;
         }
 
-        return nextValue;
-    }
+        return getLeapYear;
+    };
 
+    return leapYrSequence;
 };
