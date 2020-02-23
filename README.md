@@ -13,3 +13,23 @@ You can also easily extend the utility to generate special custom sequencies for
 This codebase and repository exists mostly for demonstratio and educational purposes. The goal was to show users how something like this can be built, and also walk them through the procees of building one, while highlighting the best practices we applied and decisions we made at certain stages of building out the utility. 
 
 The free tutorial and CodeWalk is available at http://bit.ly/int-range-codewalk
+
+### Usage
+
+1. To get started, clone this repository to your local machine and go into the int-range directory
+
+    ```
+    git clone https://github.com/chalu/int-range.git
+    cd int-range
+    ```
+
+2. Install all dependencies to complete the setup. Use NPM or Yarn depending on what you already have setup on your machine.
+
+    ```
+    npm install --save
+    ```
+
+    ```
+    yarn install
+    ```
+
