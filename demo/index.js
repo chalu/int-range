@@ -1,6 +1,6 @@
 import { html, render } from "lit-html";
 
-import { intRange, even, odd, multiples } from "../src/int-range.js";
+import { intRange, odd, multiples } from "../src/int-range.js";
 import { leapYear } from "../src/plugins/leap-year.js";
 
 let listTemplate = ints => html`
