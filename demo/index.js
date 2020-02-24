@@ -49,13 +49,6 @@ const advancedSamples = () => {
   const otherRanges = [];
 
   range = intRange({
-    start: 2,
-    limit: 20,
-    sequence: even({ steps: 2 })
-  });
-  otherRanges.push(range);
-
-  range = intRange({
     start: 1,
     limit: 20,
     sequence: odd({ steps: 2 })
