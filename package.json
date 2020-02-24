@@ -1,7 +1,7 @@
 {
   "name": "int-range",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/int-range.js",
   "repository": "git@github.com:chalu/int-range.git",
   "license": "MIT",
   "scripts": {
