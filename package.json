@@ -6,10 +6,13 @@
   "license": "MIT",
   "scripts": {
     "lint": "npx eslint ./src",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "dev": "parcel examples/index.html"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "lit-html": "^1.1.2",
+    "parcel-bundler": "^1.12.4"
   }
 }
