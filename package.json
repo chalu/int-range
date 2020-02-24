@@ -5,9 +5,9 @@
   "repository": "git@github.com:chalu/int-range.git",
   "license": "MIT",
   "scripts": {
-    "lint": "npx eslint ./src",
+    "lint": "eslint ./src",
     "test": "jest --coverage",
-    "dev": "parcel examples/index.html"
+    "demo": "parcel demo/index.html"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
