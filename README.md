@@ -10,9 +10,9 @@ You can also easily extend the utility to generate special custom sequencies for
 
 ### Why
 
-This codebase and repository exists mostly for demonstratio and educational purposes. The goal was to show users how something like this can be built, and also walk them through the procees of building one, while highlighting the best practices we applied and decisions we made at certain stages of building out the utility. 
+This codebase and repository exists mostly for demonstration and educational purposes. The goal is to show users how this could be built, and also walk through the procees of doing so, while highlighting some best practices we applied and decisions we made along the way. 
 
-The free tutorial and CodeWalk is available at http://bit.ly/int-range-codewalk
+The free and somewhat obsolete CodeWalk tutorial is available at http://bit.ly/int-range-codewalk
 
 ### Usage
 
@@ -33,3 +33,39 @@ The free tutorial and CodeWalk is available at http://bit.ly/int-range-codewalk
     yarn install
     ```
 
+3. View the samples by running any of the following commands and opening the displayed URL in a browser
+
+    ```
+    npm run demo
+    ```
+
+    ```
+    yarn demo
+    ```
+
+### Examples
+
+See [the demo folder](https://github.com/chalu/int-range/tree/master/demo) for more usage samples
+
+> Generate 1 to 5
+```
+intRange({ start: 1, limit: 5 });
+```
+
+> Generate 1 to 15, each integer spaced out by 3
+```
+intRange({ start: 1, limit: 15, sequence: 3 });
+```
+
+> Generate integers between 25 and 1, in descending order, each integer spaced out by 5
+```
+intRange({ start: 25, limit: 1, sequence: 5 });
+```
+
+> Generate every other multiple of 5 between 1 to 35
+```
+intRange({ 
+    start: 1, limit: 35, 
+    sequence: multiples({ of: 5, steps: 2 })
+});
+```
