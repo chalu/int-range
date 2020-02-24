@@ -1,6 +1,6 @@
 import { html, render } from "lit-html";
 
-import { intRange, even, odd, multiples } from "../src/int-range.js";
+import { intRange, odd, multiples } from "../src/int-range.js";
 import { leapYear } from "../src/plugins/leap-year.js";
 
 let listTemplate = ints => html`
@@ -14,7 +14,7 @@ let listTemplate = ints => html`
   </ul>
 `;
 
-const displaySamples = () => {
+const basicSamples = () => {
   let range = [];
   const basicRanges = [];
 
@@ -38,14 +38,15 @@ const displaySamples = () => {
   });
   basicRanges.push(range);
 
-  const otherRanges = [];
-
-  range = intRange({
-    start: 2,
-    limit: 20,
-    sequence: even({ steps: 2 })
+  let slots = document.querySelectorAll(".sample.basic details div");
+  basicRanges.forEach((ints, index) => {
+    render(listTemplate(ints), slots[index]);
   });
-  otherRanges.push(range);
+};
+
+const advancedSamples = () => {
+  let range = [];
+  const otherRanges = [];
 
   range = intRange({
     start: 1,
@@ -57,7 +58,7 @@ const displaySamples = () => {
   range = intRange({
     start: 1,
     limit: 35,
-    sequence: multiples({of: 5, steps: 2 })
+    sequence: multiples({ of: 5, steps: 2 })
   });
   otherRanges.push(range);
 
@@ -68,15 +69,13 @@ const displaySamples = () => {
   });
   otherRanges.push(range);
 
-  let slots = document.querySelectorAll(".sample.basic details div");
-  basicRanges.forEach((ints, index) => {
-    render(listTemplate(ints), slots[index]);
-  });
-
-  slots = document.querySelectorAll(".sample.advanced details div");
+  let slots = document.querySelectorAll(".sample.advanced details div");
   otherRanges.forEach((ints, index) => {
     render(listTemplate(ints), slots[index]);
   });
 };
 
-document.addEventListener("DOMContentLoaded", displaySamples);
+document.addEventListener("DOMContentLoaded", () => {
+  basicSamples();
+  advancedSamples();
+});
