@@ -14,7 +14,7 @@ let listTemplate = ints => html`
   </ul>
 `;
 
-const displaySamples = () => {
+const basicSamples = () => {
   let range = [];
   const basicRanges = [];
 
@@ -38,6 +38,14 @@ const displaySamples = () => {
   });
   basicRanges.push(range);
 
+  let slots = document.querySelectorAll(".sample.basic details div");
+  basicRanges.forEach((ints, index) => {
+    render(listTemplate(ints), slots[index]);
+  });
+};
+
+const advancedSamples = () => {
+  let range = [];
   const otherRanges = [];
 
   range = intRange({
@@ -57,7 +65,7 @@ const displaySamples = () => {
   range = intRange({
     start: 1,
     limit: 35,
-    sequence: multiples({of: 5, steps: 2 })
+    sequence: multiples({ of: 5, steps: 2 })
   });
   otherRanges.push(range);
 
@@ -68,15 +76,13 @@ const displaySamples = () => {
   });
   otherRanges.push(range);
 
-  let slots = document.querySelectorAll(".sample.basic details div");
-  basicRanges.forEach((ints, index) => {
-    render(listTemplate(ints), slots[index]);
-  });
-
-  slots = document.querySelectorAll(".sample.advanced details div");
+  let slots = document.querySelectorAll(".sample.advanced details div");
   otherRanges.forEach((ints, index) => {
     render(listTemplate(ints), slots[index]);
   });
 };
 
-document.addEventListener("DOMContentLoaded", displaySamples);
+document.addEventListener("DOMContentLoaded", () => {
+  basicSamples();
+  advancedSamples();
+});
