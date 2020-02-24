@@ -40,25 +40,25 @@ export const intRange = (options = {}) => {
   return range;
 };
 
-export const sequencer = (opts = {}) => {
-  const intSequence = updateValueByOne => {
-    const { steps = 1, validator = () => false } = opts;
+const nextFnFactory = (opts, updateValue) => {
+  const { steps = 1, validator = () => false } = opts;
+  const getNext = value => {
+    let matches = 0;
+    let nextValue = value;
 
-    const getNext = value => {
-      let matches = 0;
-      let nextValue = value;
+    while (matches < steps) {
+      nextValue = updateValue(nextValue);
+      if (validator(nextValue)) matches += 1;
+    }
 
-      while (matches < steps) {
-        nextValue = updateValueByOne(nextValue);
-        if (validator(nextValue)) matches += 1;
-      }
-
-      return nextValue;
-    };
-
-    return getNext;
+    return nextValue;
   };
 
+  return getNext;
+};
+
+export const sequencer = (opts = {}) => {
+  const intSequence = updateValueByOne => nextFnFactory(opts, updateValueByOne);
   return intSequence;
 };
 
