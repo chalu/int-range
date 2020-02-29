@@ -1,6 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/4a014530ed6dc1c4331d/maintainability)](https://codeclimate.com/github/chalu/int-range/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4a014530ed6dc1c4331d/test_coverage)](https://codeclimate.com/github/chalu/int-range/test_coverage)
+[![maintainability](https://api.codeclimate.com/v1/badges/4a014530ed6dc1c4331d/maintainability)](https://codeclimate.com/github/chalu/int-range/maintainability) [![issues](https://img.shields.io/codeclimate/issues/chalu/int-range)](https://codeclimate.com/github/chalu/int-range/issues) [![technical debt](https://img.shields.io/codeclimate/tech-debt/chalu/int-range)](https://codeclimate.com/github/chalu/int-range/trends/technical_debt) [![test coverage](https://api.codeclimate.com/v1/badges/4a014530ed6dc1c4331d/test_coverage)](https://codeclimate.com/github/chalu/int-range/test_coverage)
 
 # int-range
 
