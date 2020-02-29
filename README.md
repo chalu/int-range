@@ -43,7 +43,7 @@ The free and somewhat obsolete CodeWalk tutorial is available at http://bit.ly/i
 
 ### Examples
 
-See [the demo folder](https://github.com/chalu/int-range/tree/master/demo) for more usage samples
+See [the demo folder](https://chalu.github.io/int-range/index.html) for more usage samples
 
 > Generate 1 to 5
 ```
