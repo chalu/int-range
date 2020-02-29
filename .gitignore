@@ -61,4 +61,4 @@ typings/
 .next
 
 .cache
-dist
+.DS_Store
