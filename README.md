@@ -43,27 +43,27 @@ The free and somewhat obsolete CodeWalk tutorial is available at http://bit.ly/i
 
 ### Examples
 
-See [the demo folder](https://chalu.github.io/int-range/index.html) for more usage samples
+See [the docs folder](https://chalu.github.io/int-range/index.html) for more usage samples
 
 > Generate 1 to 5
 ```
-intRange({ start: 1, limit: 5 });
+intRange({ from: 1, till: 5 });
 ```
 
 > Generate 1 to 15, each integer spaced out by 3
 ```
-intRange({ start: 1, limit: 15, sequence: 3 });
+intRange({ from: 1, till: 15, stepsOf: 3 });
 ```
 
 > Generate integers between 25 and 1, in descending order, each integer spaced out by 5
 ```
-intRange({ start: 25, limit: 1, sequence: 5 });
+intRange({ from: 25, till: 1, stepsOf: 5 });
 ```
 
 > Generate every other multiple of 5 between 1 to 35
 ```
 intRange({ 
-    start: 1, limit: 35, 
-    sequence: multiples({ of: 5, steps: 2 })
+    from: 1, till: 35, 
+    sequence: multiples({ of: 5, stepsOf: 2 })
 });
 ```
