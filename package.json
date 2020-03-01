@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint ./src",
     "test": "jest --coverage",
-    "demo": "parcel demo/index.html",
+    "demo": "parcel examples/index.html",
     "build-demo": "parcel build examples/index.html --experimental-scope-hoisting --out-dir docs"
   },
   "devDependencies": {

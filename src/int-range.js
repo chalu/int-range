@@ -9,29 +9,30 @@ const decrementUpTo = limit => value => value >= limit;
 const isEven = num => num % 2 === 0;
 const isOdd = num => num % 2 !== 0;
 
-const getUpdateStrategy = (start, limit, sequence) => {
+const getUpdateStrategy = (from, till, stepsOf, sequence) => {
   const strategy = {};
-  const isIncrement = start < limit;
+  const isIncrement = from < till;
 
   strategy.next =
-    isIncrement === true ? incrementBy(sequence) : decrementBy(sequence);
-  strategy.hasNext =
-    isIncrement === true ? incrementUpTo(limit) : decrementUpTo(limit);
+    isIncrement === true ? incrementBy(stepsOf) : decrementBy(stepsOf);
 
-  if (typeof sequence === "function") {
+  if (sequence && typeof sequence === "function") {
     strategy.next = sequence(updateByOne(isIncrement));
   }
+
+  strategy.hasNext =
+    isIncrement === true ? incrementUpTo(till) : decrementUpTo(till);
 
   return strategy;
 };
 
 export const intRange = (options = {}) => {
-  const { start = 0, limit = 20, sequence = 1 } = options;
+  const { from = 0, till = 20, stepsOf = 1, sequence } = options;
 
   const range = [];
-  const { next, hasNext } = getUpdateStrategy(start, limit, sequence);
+  const { next, hasNext } = getUpdateStrategy(from, till, stepsOf, sequence);
 
-  let value = start;
+  let value = from;
   while (hasNext(value)) {
     range.push(value);
     value = next(value);
@@ -41,12 +42,12 @@ export const intRange = (options = {}) => {
 };
 
 const nextFnFactory = (opts, updateValue) => {
-  const { steps = 1, validator = () => false } = opts;
+  const { stepsOf = 1, validator = () => false } = opts;
   const getNext = value => {
     let matches = 0;
     let nextValue = value;
 
-    while (matches < steps) {
+    while (matches < stepsOf) {
       nextValue = updateValue(nextValue);
       if (validator(nextValue)) matches += 1;
     }

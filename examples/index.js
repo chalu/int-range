@@ -19,22 +19,22 @@ const basicSamples = () => {
   const basicRanges = [];
 
   range = intRange({
-    start: 1,
-    limit: 5
+    from: 1,
+    till: 5
   });
   basicRanges.push(range);
 
   range = intRange({
-    start: 1,
-    limit: 15,
-    sequence: 3
+    from: 1,
+    till: 15,
+    stepsOf: 3
   });
   basicRanges.push(range);
 
   range = intRange({
-    start: 25,
-    limit: 1,
-    sequence: 5
+    from: 25,
+    till: 1,
+    stepsOf: 5
   });
   basicRanges.push(range);
 
@@ -49,23 +49,23 @@ const advancedSamples = () => {
   const otherRanges = [];
 
   range = intRange({
-    start: 1,
-    limit: 20,
-    sequence: odd({ steps: 2 })
+    from: 1,
+    till: 20,
+    sequence: odd({ stepsOf: 2 })
   });
   otherRanges.push(range);
 
   range = intRange({
-    start: 1,
-    limit: 35,
-    sequence: multiples({ of: 5, steps: 2 })
+    from: 1,
+    till: 35,
+    sequence: multiples({ of: 5, stepsOf: 2 })
   });
   otherRanges.push(range);
 
   range = intRange({
-    start: 1980,
-    limit: 2020,
-    sequence: leapYear({ steps: 2 })
+    from: 1980,
+    till: 2020,
+    sequence: leapYear({ stepsOf: 2 })
   });
   otherRanges.push(range);
 
