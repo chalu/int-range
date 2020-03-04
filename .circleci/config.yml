@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
+  coverage-reporter: codacy/coverage-reporter@7.4.1
 jobs:
   build-and-test:
     executor:
@@ -11,6 +12,7 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+            - coverage-reporter/send_report
 workflows:
     build-and-test:
       jobs:
