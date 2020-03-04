@@ -14,30 +14,30 @@ See [the docs folder](https://chalu.github.io/int-range/index.html) for more usa
 
 ## Usage
 
-1. To get started, clone this repository to your local machine and go into the int-range directory
+1.  To get started, clone this repository to your local machine and go into the int-range directory
 
-    ```
+    ```console
     git clone https://github.com/chalu/int-range.git
     cd int-range
     ```
 
-2. Install all dependencies to complete the setup. Use NPM or Yarn depending on what you already have setup on your machine.
+2.  Install all dependencies to complete the setup. Use NPM or Yarn depending on what you already have setup on your machine.
 
-    ```
+    ```console
     npm install --save
     ```
 
-    ```
+    ```console
     yarn install
     ```
 
-3. View the samples by running any of the following commands and opening the displayed URL in a browser
+3.  View the samples by running any of the following commands and opening the displayed URL in a browser
 
-    ```
+    ```console
     npm run demo
     ```
 
-    ```
+    ```console
     yarn demo
     ```
 
@@ -46,24 +46,24 @@ See [the docs folder](https://chalu.github.io/int-range/index.html) for more usa
 1.  Generate 1 to 5
 
     ```javascriot
-    intRange({ from: 1, till: 5 });
+    ints({ from: 1, till: 5 });
     ```
 
 2.  Generate 1 to 15, each integer spaced out by 3
 
     ```javascriot
-    intRange({ from: 1, till: 15, stepsOf: 3 });
+    ints({ from: 1, till: 15, stepsOf: 3 });
     ```
 
 3.  Generate integers between 25 and 1, in descending order, each integer spaced out by 5
 
     ```javascriot
-    intRange({ from: 25, till: 1, stepsOf: 5 });
+    ints({ from: 25, till: 1, stepsOf: 5 });
     ```
 
 4.  Generate every other multiple of 5 between 1 to 35
     ```javascriot
-    intRange({ 
+    ints({ 
         from: 1, till: 35, 
         sequence: multiples({ of: 5, stepsOf: 2 })
     });
