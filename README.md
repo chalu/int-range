@@ -1,4 +1,4 @@
-[![maintainability](https://api.codeclimate.com/v1/badges/4a014530ed6dc1c4331d/maintainability)](https://codeclimate.com/github/chalu/int-range/maintainability) [![issues](https://img.shields.io/codeclimate/issues/chalu/int-range)](https://codeclimate.com/github/chalu/int-range/issues) [![technical debt](https://img.shields.io/codeclimate/tech-debt/chalu/int-range)](https://codeclimate.com/github/chalu/int-range/trends/technical_debt) [![test coverage](https://api.codeclimate.com/v1/badges/4a014530ed6dc1c4331d/test_coverage)](https://codeclimate.com/github/chalu/int-range/test_coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=chalu/int-range&amp;utm_campaign=Badge_Grade)
 
 # int-range
 
@@ -43,26 +43,26 @@ See [the docs folder](https://chalu.github.io/int-range/index.html) for more usa
 
 ## Examples
 
-1.  Generate 1 to 5
+1.  Generate 1 to 5 
 
-    ```javascriot
+    ```javascript
     ints({ from: 1, till: 5 });
     ```
 
 2.  Generate 1 to 15, each integer spaced out by 3
 
-    ```javascriot
+    ```javascript
     ints({ from: 1, till: 15, stepsOf: 3 });
     ```
 
 3.  Generate integers between 25 and 1, in descending order, each integer spaced out by 5
 
-    ```javascriot
+    ```javascript
     ints({ from: 25, till: 1, stepsOf: 5 });
     ```
 
 4.  Generate every other multiple of 5 between 1 to 35
-    ```javascriot
+    ```javascript
     ints({ 
         from: 1, till: 35, 
         sequence: multiples({ of: 5, stepsOf: 2 })
