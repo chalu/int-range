@@ -9,7 +9,8 @@ const decrementUpTo = limit => value => value >= limit;
 const isEven = num => num % 2 === 0;
 const isOdd = num => num % 2 !== 0;
 
-const getUpdateStrategy = (from, till, stepsOf, sequence) => {
+const getUpdateStrategy = (options) => {
+  const { from = 0, till = 20, stepsOf = 1, sequence } = options;
   const strategy = {};
   const isIncrement = from < till;
 
@@ -27,10 +28,10 @@ const getUpdateStrategy = (from, till, stepsOf, sequence) => {
 };
 
 export const ints = (options = {}) => {
-  const { from = 0, till = 20, stepsOf = 1, sequence } = options;
+  const { from = 0 } = options;
 
   const range = [];
-  const { next, hasNext } = getUpdateStrategy(from, till, stepsOf, sequence);
+  const { next, hasNext } = getUpdateStrategy(options);
 
   let value = from;
   while (hasNext(value)) {
@@ -74,7 +75,6 @@ export const odd = (opts = {}) => {
 };
 
 export const multiples = (opts = {}) => {
-  const { of = 2 } = opts;
-  opts.validator = num => num % of === 0;
+  opts.validator = num => num % opts.of === 0;
   return sequencer(opts);
 };
