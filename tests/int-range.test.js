@@ -1,4 +1,4 @@
-import { ints, even, odd, multiples } from "../src/int-range.js";
+import { ints, even } from "../src/int-range.js";
 import { leapYear } from "../src/plugins/leap-year.js";
 
 describe("generates basic integer sequencies", () => {
@@ -55,101 +55,6 @@ describe("generates basic integer sequencies", () => {
 
 describe("generates advanced integer sequencies", () => {
   describe("generates even numbers", () => {
-    test("can generate single spaced even integers, in increments", () => {
-      const range = ints({
-        from: 2,
-        till: 20,
-        sequence: even()
-      });
-      expect(range.length).toBe(10);
-
-      const expected = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
-      expect(range).toEqual(expect.arrayContaining(expected));
-    });
-
-    test("can generate single spaced even integers, in decrements", () => {
-      const range = ints({
-        from: 20,
-        till: 1,
-        sequence: even()
-      });
-
-      expect(range.length).toBe(10);
-
-      const expected = [20, 18, 16, 14, 12, 10, 8, 6, 4, 2];
-      expect(range).toEqual(expect.arrayContaining(expected));
-    });
-
-    test("can generate custom spaced even integers, in increments & decrements", () => {
-      let range = ints({
-        from: 2,
-        till: 30,
-        sequence: even({ stepsOf: 3 })
-      });
-      expect(range.length).toBe(5);
-      let expected = [2, 8, 14, 20, 26];
-      expect(range).toEqual(expect.arrayContaining(expected));
-
-      range = ints({
-        from: 50,
-        till: 2,
-        sequence: even({ stepsOf: 5 })
-      });
-      expect(range.length).toBe(5);
-      expected = [50, 40, 30, 20, 10];
-      expect(range).toEqual(expect.arrayContaining(expected));
-    });
-  });
-
-  describe("generates odd numbers", () => {
-    test("can generate single spaced odd integers, in increments", () => {
-      const range = ints({
-        from: 1,
-        till: 20,
-        sequence: odd()
-      });
-      console.log(range);
-      expect(range.length).toBe(10);
-
-      const expected = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
-      expect(range).toEqual(expect.arrayContaining(expected));
-    });
-
-    test("can generate single spaced odd integers, in decrements", () => {
-      const range = ints({
-        from: 20,
-        till: 1,
-        sequence: odd()
-      });
-
-      expect(range.length).toBe(10);
-
-      const expected = [20, 18, 16, 14, 12, 10, 8, 6, 4, 2];
-      expect(range).toEqual(expect.arrayContaining(expected));
-    });
-
-    test("can generate custom spaced odd integers, in increments & decrements", () => {
-      let range = ints({
-        from: 1,
-        till: 30,
-        sequence: odd({ stepsOf: 3 })
-      });
-      expect(range.length).toBe(5);
-      let expected = [2, 8, 14, 20, 26];
-      expect(range).toEqual(expect.arrayContaining(expected));
-
-      range = ints({
-        from: 50,
-        till: 2,
-        sequence: odd({ stepsOf: 5 })
-      });
-      expect(range.length).toBe(5);
-      expected = [50, 40, 30, 20, 10];
-      expect(range).toEqual(expect.arrayContaining(expected));
-    });
-  });
-
-  describe("generates multiples numbers", () => {
     test("can generate single spaced even integers, in increments", () => {
       const range = ints({
         from: 2,
