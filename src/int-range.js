@@ -28,12 +28,10 @@ const getUpdateStrategy = (options) => {
 };
 
 export const ints = (options = {}) => {
-  const { from = 0 } = options;
-
   const range = [];
   const { next, hasNext } = getUpdateStrategy(options);
 
-  let value = from;
+  let value = options.from;
   while (hasNext(value)) {
     range.push(value);
     value = next(value);
