@@ -12,6 +12,7 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+            - run: export CODACY_PROJECT_TOKEN=c4a729aae566462f986ab7580d837a80
             - coverage-reporter/send_report
 workflows:
     build-and-test:
