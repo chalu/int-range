@@ -26,7 +26,7 @@ const getUpdateStrategy = (from, till, stepsOf, sequence) => {
   return strategy;
 };
 
-export const intRange = (options = {}) => {
+export const ints = (options = {}) => {
   const { from = 0, till = 20, stepsOf = 1, sequence } = options;
 
   const range = [];
