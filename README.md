@@ -91,7 +91,7 @@ Have need for a custom or domain specific integer sequence? You simply need to m
 
     }
     ```
-    
+
 3.  Define a validator function. It should return true when its parameter if a bonafide member of your custom sequence. This validator should be set as the validator property of the object parameter in your custom range function
     ```javascript
     export const myCustomIntRange = (opts = {}) => {
