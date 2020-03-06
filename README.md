@@ -1,9 +1,10 @@
 <img src="./examples/ints.png">
 
-:sparkles: :sparkles: An extensible 1.5KB JavaScript utility for generating integers
+:sparkles: :sparkles: An extensible 1.5KB JavaScript utility for generating integers :zap: :muscle: :fire:
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Coverage)  :zap: :muscle: :fire:
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Coverage) 
 
+## About
 
 A simple Javascript utility that can generate a range of integers, from simple ranges like even and odd numbers, to multiples of a given number, all with configurable spacing between the number sequencies.
 
@@ -74,5 +75,50 @@ See [this demo](https://chalu.github.io/int-range/index.html) from [the docs fol
       sequence: multiples({ of: 5, stepsOf: 2 })
     });
     ```
+
+## Extensibility
+
+Have need for a custom or domain specific integer sequence? You simply need to make a validator function!
+
+1.  Import the util's sequencer engine
+    ```javascript
+    import { sequencer } from "../int-range.js";
+    ```
+
+2.  Declare and export your custom range function. It will be called with an object parameter
+    ```javascript
+    export const myCustomIntRange = (opts = {}) => {
+
+    }
+    ```
+
+3.  Define a validator function. It should return true when its parameter if a bonafide member of your custom sequence. This validator should be set as the validator property of the object parameter in your custom range function
+    ```javascript
+    export const myCustomIntRange = (opts = {}) => {
+        opts.validator = (value) => {
+            // determine if value meets the requirement
+            // for members of your custom range, 
+            // then return true, otherwise return false.
+        }
+    }
+    ```
+
+4.  Call the sequencer function with your input parameter and return the outcome. Your complete custom integer sequence code structure should look like: 
+    ```javascript
+    import { sequencer } from "../int-range.js";
+
+    export const myCustomIntRange = (opts = {}) => {
+        opts.validator = (value) => {
+            if(/* value meets member requirements */) return true;
+
+            return false;
+        }
+
+        return sequencer(opts);
+    }
+    ```
+
+Take a look at the [leap year sample](https://github.com/chalu/int-range/blob/master/src/plugins/leap-year.js) and see how super easy it is to extend int-range.js to sequence complex or custom domain specific integer ranges.
+
 ## LICENSE
 MIT
