@@ -1,16 +1,19 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=chalu/int-range&amp;utm_campaign=Badge_Grade)
+<img src="./examples/ints.png">
 
-# int-range
+:sparkles: :sparkles: An extensible 2.6KB JavaScript utility for generating integers
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Coverage)  :zap: :muscle: :fire:
+
 
 A simple Javascript utility that can generate a range of integers, from simple ranges like even and odd numbers, to multiples of a given number, all with configurable spacing between the number sequencies.
 
-You can also easily extend the utility to generate special custom sequencies for your unique needs. E.g the sequence of leap years between 1980 and 2020!
+You can also easily extend the utility to generate special custom sequencies for your unique needs. See bundled leap-year plugin example
 
 ## Why
 
-This codebase and repository exists mostly for demonstration and educational purposes. The goal is to show users how this could be built, and also walk through the procees of doing so, while highlighting some best practices we applied and decisions we made along the way. 
+This utility is tested and can be used anyhow you deem fit, but the codebase and repository exists mostly for demonstration and educational purposes. The goal is to show how this could be built, and walk through the procees of doing so while highlighting some best practices and decisions. If you feel this should materialise into an NPM package, let me know [on Twitter](https://twitter.com/chaluwa)
 
-See [the docs folder](https://chalu.github.io/int-range/index.html) for more usage samples
+Next, I'll be make a code-walk series on how this utility was designed and built, so stay tuned :smirk:
 
 ## Usage
 
@@ -43,13 +46,15 @@ See [the docs folder](https://chalu.github.io/int-range/index.html) for more usa
 
 ## Examples
 
-1.  Generate 1 to 5 
+See [this demo](https://chalu.github.io/int-range/index.html) from [the docs folder](https://chalu.github.io/int-range/index.html) for more usage samples
+
+1.  Generate 1 to 5
 
     ```javascript
     ints({ from: 1, till: 5 });
     ```
 
-2.  Generate 1 to 15, each integer spaced out by 3
+2.  Generate 1 to 15, in steps of 3
 
     ```javascript
     ints({ from: 1, till: 15, stepsOf: 3 });
@@ -63,8 +68,11 @@ See [the docs folder](https://chalu.github.io/int-range/index.html) for more usa
 
 4.  Generate every other multiple of 5 between 1 to 35
     ```javascript
-    ints({ 
-        from: 1, till: 35, 
-        sequence: multiples({ of: 5, stepsOf: 2 })
+    ints({
+      from: 1,
+      till: 35,
+      sequence: multiples({ of: 5, stepsOf: 2 })
     });
     ```
+## LICENSE
+MIT
