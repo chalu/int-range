@@ -46,7 +46,7 @@ Next, I'll be make a code-walk series on how this utility was designed and built
 
 ## Examples
 
-See [this demo](https://chalu.github.io/int-range/index.html) from [the docs folder](https://chalu.github.io/int-range/index.html) for more usage samples
+See [this demo](https://chalu.github.io/int-range/index.html) from [the docs folder](https://github.com/chalu/int-range/tree/master/docs) for more usage samples
 
 1.  Generate 1 to 5
 
