@@ -1,6 +1,6 @@
 <img src="./examples/ints.png">
 
-:sparkles: :sparkles: An extensible 2.6KB JavaScript utility for generating integers
+:sparkles: :sparkles: An extensible 1.5KB JavaScript utility for generating integers
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/d9e9f0f2f0134e538327a072606dec71)](https://www.codacy.com/manual/chalu/int-range?utm_source=github.com&utm_medium=referral&utm_content=chalu/int-range&utm_campaign=Badge_Coverage)  :zap: :muscle: :fire:
 
