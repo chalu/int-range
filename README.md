@@ -80,7 +80,7 @@ See [this demo](https://chalu.github.io/int-range/index.html) from [the docs fol
 
 Have need for a custom or domain specific integer sequence? You simply need to make a validator function!
 
-1. Import the util's sequencer engine
+1.  Import the util's sequencer engine
     ```javascript
     import { sequencer } from "../int-range.js";
     ```
