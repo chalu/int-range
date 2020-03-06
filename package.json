@@ -1,14 +1,17 @@
 {
   "name": "int-range",
   "version": "1.0.0",
-  "main": "src/int-range.js",
+  "main": "dist/int-range.js",
   "repository": "git@github.com:chalu/int-range.git",
   "license": "MIT",
+  "author": {
+    "name": "ODILI Charles Opute",
+    "email": "chaluwa@gmail.com",
+    "url": "https://twitter.com/chaluwa"
+  },
   "scripts": {
-    "lint": "eslint ./src",
     "test": "jest --coverage",
-    "demo": "parcel examples/index.html",
-    "build-demo": "parcel build examples/index.html --experimental-scope-hoisting --out-dir docs"
+    "demo": "parcel examples/index.html --out-dir demo"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
