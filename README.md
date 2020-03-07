@@ -118,7 +118,7 @@ Have need for a custom or domain specific integer sequence? You simply need to m
     }
     ```
 
-5. Finally, use your `myCustomIntRange` to generate integers
+5.  Finally, use `myCustomIntRange` to generate your desired sequence of integers
     ```javascript
     import { ints } from "../int-range.js";
     import { myCustomIntRange } from "./path/to/my-custom-int-range.js";
