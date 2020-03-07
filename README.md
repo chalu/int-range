@@ -118,6 +118,20 @@ Have need for a custom or domain specific integer sequence? You simply need to m
     }
     ```
 
+5. Finally, use your `myCustomIntRange` to generate integers
+    ```javascript
+    import { ints } from "../int-range.js";
+    import { myCustomIntRange } from "./path/to/my-custom-int-range.js";
+
+    const numbers = ints({
+        from: 5,
+        till: 200,
+        sequence: myCustomIntRange({ stepsOf: 2 })
+    });
+    
+    console.log(numbers);
+    ```
+
 Take a look at the [leap year sample](https://github.com/chalu/int-range/blob/master/src/plugins/leap-year.js) and see how super easy it is to extend int-range.js to sequence complex or custom domain specific integer ranges.
 
 ## LICENSE
