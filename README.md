@@ -1,4 +1,4 @@
-<img src="./examples/ints.png">
+<img src="./demo/ints.png">
 
 :sparkles: :sparkles: An extensible 1.5KB JavaScript utility for generating integers :zap: :muscle: :fire:
 
