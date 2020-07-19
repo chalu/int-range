@@ -12,7 +12,7 @@ You can also easily extend the utility to generate special custom sequencies for
 
 ## Why
 
-This utility is tested and can be used anyhow you deem fit, but the codebase and repository exists mostly for demonstration and educational purposes. The goal is to show how this could be built, and maybe walk through the procees of doing so (with a youtube playlist :smirk:) while highlighting some best practices. If you feel this should become an NPM package, let me know [on Twitter](https://twitter.com/chaluwa)
+This utility can be used anyhow you deem fit, but the codebase and repository exists mostly for demonstration and educational purposes. The goal is to show how this could be built, and maybe walk through the procees of doing so (with a youtube playlist :smirk:) while highlighting some best practices. If you feel this should become an NPM package, let me know [on Twitter](https://twitter.com/chaluwa)
 
 ## Usage
 
