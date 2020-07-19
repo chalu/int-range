@@ -35,7 +35,7 @@ describe("generates basic integer sequencies", () => {
 
     expect(range.length).toBe(10);
 
-    const expected = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28];
+    const expected = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30];
     expect(range).toEqual(expect.arrayContaining(expected));
   });
 
@@ -48,7 +48,7 @@ describe("generates basic integer sequencies", () => {
 
     expect(range.length).toBe(10);
 
-    const expected = [30, 27, 24, 21, 18, 15, 12, 9, 6, 3];
+    const expected = [28, 25, 22, 19, 16, 13, 10, 7, 4, 1];
     expect(range).toEqual(expect.arrayContaining(expected));
   });
 });
@@ -87,7 +87,7 @@ describe("generates advanced integer sequencies", () => {
         sequence: even({ stepsOf: 3 })
       });
       expect(range.length).toBe(5);
-      let expected = [2, 8, 14, 20, 26];
+      let expected = [6, 12, 18, 24, 30];
       expect(range).toEqual(expect.arrayContaining(expected));
 
       range = ints({
@@ -96,7 +96,7 @@ describe("generates advanced integer sequencies", () => {
         sequence: even({ stepsOf: 5 })
       });
       expect(range.length).toBe(5);
-      expected = [50, 40, 30, 20, 10];
+      expected = [42, 32, 22, 12, 2];
       expect(range).toEqual(expect.arrayContaining(expected));
     });
   });
@@ -157,9 +157,9 @@ describe("can generate custom integer sequencies", () => {
       till: 2020,
       sequence: leapYear({ stepsOf: 2 })
     });
-    expect(range.length).toBe(7);
+    expect(range.length).toBe(6);
 
-    const expected = [1970, 1976, 1984, 1992, 2000, 2008, 2016];
+    const expected = [1976, 1984, 1992, 2000, 2008, 2016];
     expect(range).toEqual(expect.arrayContaining(expected));
   });
 });
